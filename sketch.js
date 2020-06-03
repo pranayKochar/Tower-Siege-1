@@ -4,13 +4,15 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
+var ground, canvasGround, box1, box2, box3, box4, box5, box6, cannon, slingshot;
 
 function setup() {
-  createCanvas(800,400);
+  createCanvas(1200,500);
   engine = Engine.create();
   world = engine.world;
 
   ground = new Ground(600,370,250,20);
+  canvasGround = new Ground(600,480,1200,20);
 
   box1 = new Box(620,360,40,40);
   box2 = new Box(640,360,40,40);
@@ -33,6 +35,7 @@ function draw() {
   Engine.update(engine);
  
   ground.display();
+  canvasGround.display();
  
   box1.display();
   box2.display();
